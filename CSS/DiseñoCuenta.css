@@ -96,6 +96,34 @@ body {
     font-size: 16px;
 }
 
+.form-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.form-toggle button {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid #cfd7ee;
+    border-radius: 10px;
+    background: #f5f7ff;
+    color: #2e4db4;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-toggle button.active {
+    background: #3a63d7;
+    color: white;
+    border-color: #2e4db4;
+}
+
+.hidden {
+    display: none;
+}
+
 .login-card button {
     width: 100%;
     padding: 14px;
@@ -115,4 +143,13 @@ body {
 .login-message {
     margin-top: 14px;
     font-weight: bold;
+    min-height: 24px;
+}
+
+.login-message.success {
+    color: #0a8a0a;
+}
+
+.login-message.error {
+    color: #c12c2c;
 }
