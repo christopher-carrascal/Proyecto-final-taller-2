@@ -1,30 +1,27 @@
 <?php
+session_start(); // 👈 1. IMPORTANTE: Arranca el sistema de sesiones en la primera línea
 include("Conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     $usuario  = $_POST['User']; 
     $password = $_POST['password'];
-
 
     $sql = "SELECT * FROM usuarios WHERE Nombre = '$usuario'";
     $resultado = mysqli_query($conexion, $sql);
 
-    //Esto es para que si se encuentra solo un resultado...
     if (mysqli_num_rows($resultado) == 1) {
-        //Recoge los datos del resultado
         $fila = mysqli_fetch_assoc($resultado);
         
         if (password_verify($password, $fila['Contra'])) {
-
-            echo "<h3>¡Bienvenido a Ticketa, " . $fila['Nombre'] . "!</h3>";
-            echo "<p>Inicio de sesión correcto.</p>";
-            echo "<a href='../HTML/Index.html'>Ir al Inicio</a>";
+            // 2. Guardamos el nombre en la sesión del servidor
+            $_SESSION['usuario_logueado'] = $usuario; 
+            
+            echo "correcto";
         } else {
-            echo "Contraseña incorrecta. <a href='../HTML/IniciarS.html'>Intentar de nuevo</a>";
+            echo "Contraseña incorrecta.";
         }
     } else {
-        echo "El nombre de usuario no existe. <a href='../HTML/IniciarS.html'>Intentar de nuevo</a>";
+        echo "El nombre de usuario no existe.";
     }
 }
 

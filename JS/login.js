@@ -25,15 +25,15 @@ loginForm.addEventListener('submit', (event) => {
     })
     .then(response => response.text())
     .then(respuestaPHP => {
-
-        if (respuestaPHP.includes("correcto")) {
+        // Usamos trim() para limpiar espacios invisibles o saltos de línea del PHP
+        if (respuestaPHP.trim().includes("correcto")) {
             showMessage('¡Inicio de sesión exitoso! Redirigiendo...', 'success');
             
             setTimeout(() => {
-                window.location.href = "Index.html"; 
+                // CORRECCIÓN: Agregamos '../' para salir de la carpeta actual e ir a la raíz
+                window.location.href = "../HTML/Index.html";
             }, 1500);
         } else {
-
             showMessage(respuestaPHP, 'error');
         }
     })

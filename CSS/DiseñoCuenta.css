@@ -6,8 +6,6 @@ header{
     gap : 5px;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
 }
 
 .logo{
@@ -34,12 +32,35 @@ header ul {
 header ul li a {
     text-decoration: none;
     color: #333333;
-    font-family: Arial, sans-serif;
+    font-family: cursive;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
     transition: color 0.2s;
 }
+/*--------------------------------------------------*/
+.form-row{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    gap: 15px;
+}
 
+.form-group{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group input{
+    padding: 10px;
+    border: 1px solid #cfd7ee;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+/*-------------------------------------------------*/
 header ul li a:hover {
     color: #0076fe;
     text-decoration: none;
@@ -47,9 +68,9 @@ header ul li a:hover {
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #7a9ae5;
+    margin: 0px;
+    padding: 0px;
+    background-color: #52a7d1;
 }
 
 .Derecha{
@@ -67,7 +88,7 @@ body {
 
 .login-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
     background: white;
     border-radius: 16px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
@@ -91,15 +112,6 @@ body {
     margin-bottom: 8px;
     font-weight: bold;
     color: #333333;
-}
-
-.login-card input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #cfd7ee;
-    border-radius: 10px;
-    font-size: 16px;
 }
 
 .form-toggle {
@@ -176,3 +188,5 @@ body {
     color: #2e4db4;
     text-decoration: underline;
 }
+/*--------------------------------------------------*/
+
