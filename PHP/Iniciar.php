@@ -3,7 +3,7 @@ include("Conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $usuario  = $_POST['email']; 
+    $usuario  = $_POST['User']; 
     $password = $_POST['password'];
 
 

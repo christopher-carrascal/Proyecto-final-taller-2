@@ -1,38 +1,43 @@
 const loginForm = document.getElementById('loginForm');
 const loginMessage = document.getElementById('loginMessage');
 
-function getUserKey(email) {
-  return `user_${email.toLowerCase()}`;
-}
-
-function getUser(email) {
-  const stored = localStorage.getItem(getUserKey(email));
-  return stored ? JSON.parse(stored) : null;
-}
-
 function showMessage(message, type = '') {
-  loginMessage.textContent = message;
-  loginMessage.classList.remove('success', 'error');
-  if (type) {
-    loginMessage.classList.add(type);
-  }
+    loginMessage.textContent = message;
+    loginMessage.classList.remove('success', 'error');
+    if (type) {
+        loginMessage.classList.add(type);
+    }
 }
 
 loginForm.addEventListener('submit', (event) => {
-  event.preventDefault();
+    event.preventDefault(); // Frenamos la recarga de la página
 
-  const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim();
+    const usuario = document.getElementById('User').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-  const user = getUser(email);
-  if (!user) {
-    showMessage('No se encontró una cuenta con ese correo. Regístrate primero.', 'error');
-    return;
-  }
+    const datos = new FormData();
+    datos.append('User', usuario);
+    datos.append('password', password);
 
-  if (user.password === password) {
-    showMessage('Inicio de sesión exitoso. ¡Bienvenido!', 'success');
-  } else {
-    showMessage('Contraseña incorrecta. Intenta de nuevo.', 'error');
-  }
+    fetch('../PHP/Iniciar.php', {
+        method: 'POST',
+        body: datos
+    })
+    .then(response => response.text())
+    .then(respuestaPHP => {
+
+        if (respuestaPHP.includes("correcto")) {
+            showMessage('¡Inicio de sesión exitoso! Redirigiendo...', 'success');
+            
+            setTimeout(() => {
+                window.location.href = "Index.html"; 
+            }, 1500);
+        } else {
+
+            showMessage(respuestaPHP, 'error');
+        }
+    })
+    .catch(error => {
+        showMessage('Hubo un error en la conexión con el servidor.', 'error');
+    });
 });
