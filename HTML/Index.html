@@ -19,11 +19,17 @@
         </ul>
 
         <ul class="Derecha" id="menu-auth">
-            <li class="invitado"><a class="Inicio" href="IniciarS.html">Iniciar Sesión</a></li>
-            <li class="invitado"><a class="Crear" href="Registro.html">Registrarse</a></li>  
+    <li class="invitado"><a class="Inicio" href="IniciarS.html">Iniciar Sesión</a></li>
+    <li class="invitado"><a class="Crear" href="Registro.html">Registrarse</a></li>   
     
-            <li class="usuario-registrado hidden"><a class="MiCuenta" href="Perfil.html">Cuenta</a></li>
-        </ul>
+    <li class="usuario-registrado hidden dropdown">
+        <a class="MiCuenta" href="#">Cuenta</a>
+        <div class="dropdown-content">
+            <a href="Perfil.html">Mi Perfil</a>
+            <a href="../PHP/CerrarS.php" class="btn-cerrar">Cerrar Sesión</a>
+        </div>
+    </li>
+</ul>
 
     </nav>
 </header>

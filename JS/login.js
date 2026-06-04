@@ -27,13 +27,13 @@ loginForm.addEventListener('submit', (event) => {
     .then(respuestaPHP => {
         // Usamos trim() para limpiar espacios invisibles o saltos de línea del PHP
         if (respuestaPHP.trim().includes("correcto")) {
-            showMessage('¡Inicio de sesión exitoso! Redirigiendo...', 'success');
-            
-            setTimeout(() => {
-                // CORRECCIÓN: Agregamos '../' para salir de la carpeta actual e ir a la raíz
-                window.location.href = "../HTML/Index.html";
-            }, 1500);
-        } else {
+    showMessage('¡Inicio de sesión exitoso! Redirigiendo...', 'success');
+    
+    setTimeout(() => {
+        // CORRECCIÓN DEFINITIVA: Sin '../HTML/' porque ya estás dentro de la carpeta de las vistas
+        window.location.href = "Index.html"; 
+    }, 1500);
+} else {
             showMessage(respuestaPHP, 'error');
         }
     })
