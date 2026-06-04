@@ -153,3 +153,20 @@ body {
 .login-message.error {
     color: #c12c2c;
 }
+
+.auth-link {
+    text-align: center;
+    margin-top: 16px;
+    color: #4a4a4a;
+}
+
+.auth-link a {
+    color: #3a63d7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-link a:hover {
+    color: #2e4db4;
+    text-decoration: underline;
+}
