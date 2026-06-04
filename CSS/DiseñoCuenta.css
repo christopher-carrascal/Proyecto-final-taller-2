@@ -51,6 +51,11 @@ body {
     background-color: #7a9ae5;
 }
 
+.Derecha{
+    margin-left: auto;
+    padding-right: 20px;
+}
+
 .login-container {
     display: flex;
     justify-content: center;
