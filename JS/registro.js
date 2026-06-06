@@ -30,13 +30,13 @@ registerForm.addEventListener('submit', (event) => {
     method: 'POST',
     body: datos
   })
-  .then(response => response.text())
-  .then(textoPHP => {
-    
-    showMessage('¡Registro exitoso en la base de datos!', 'success');
-    registerForm.reset();
-  })
-  .catch(error => {
-    showMessage('Hubo un error en la conexión con el servidor.', 'error');
-  });
+    .then(response => response.text())
+    .then(textoPHP => {
+
+      showMessage('¡Registro exitoso en la base de datos!', 'success');
+      registerForm.reset();
+    })
+    .catch(error => {
+      showMessage('Hubo un error en la conexión con el servidor.', 'error');
+    });
 });

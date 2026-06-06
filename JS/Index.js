@@ -1,44 +1,53 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Buscamos saliendo de la carpeta de vistas hacia PHP
+
     fetch('../PHP/SiHay.php')
         .then(response => response.json())
         .then(data => {
+
             if (data.logueado) {
-                // 1. Ocultamos los botones de Iniciar Sesión y Registrarse
+
+                // Ocultar botones de invitado
                 document.querySelectorAll('.invitado').forEach(elemento => {
-                    elemento.classList.add('hidden'); 
+                    elemento.classList.add('hidden');
                 });
 
-                // 2. Buscamos el botón de 'Cuenta' y le quitamos el 'hidden'
+                // Mostrar menú de usuario
                 const botonCuenta = document.querySelector('.usuario-registrado');
+
                 if (botonCuenta) {
                     botonCuenta.classList.remove('hidden');
-                    
-                    // Modificamos el enlace dinámicamente con el nombre real del usuario
+
                     const enlaceTexto = botonCuenta.querySelector('.MiCuenta');
+
                     if (enlaceTexto) {
                         enlaceTexto.textContent = `Cuenta (${data.usuario})`;
                     }
                 }
 
-                // 3. Lógica para abrir/cerrar el menú desplegable
+                // Dropdown
                 const dropdown = document.querySelector('.dropdown');
                 const dropdownContent = document.querySelector('.dropdown-content');
+                const btnCerrar = document.querySelector('.btn-cerrar');
 
-                if (dropdown && dropdownContent) {
-                    dropdown.addEventListener('click', (e) => {
-                        e.preventDefault(); // Evitamos que intente saltar a '#'
-                        dropdownContent.classList.toggle('show');
-                    });
+                console.log("btnCerrar =", btnCerrar);
 
-                    // Si da clic en cualquier otro lado de la pantalla, cerramos el menú
-                    window.addEventListener('click', (e) => {
-                        if (!dropdown.contains(e.target)) {
-                            dropdownContent.classList.remove('show');
-                        }
-                    });
+                console.log("btnCerrar =", btnCerrar);
+
+                if (btnCerrar) {
+
+                    btnCerrar.onclick = function (e) {
+                        e.stopPropagation();
+
+                        console.log("CLICK EN CERRAR");
+
+                        window.location.href = this.href;
+                    };
+
                 }
             }
         })
-        .catch(error => console.error("Error revisando la sesión:", error));
+        .catch(error => {
+            console.error("Error revisando la sesión:", error);
+        });
+
 });

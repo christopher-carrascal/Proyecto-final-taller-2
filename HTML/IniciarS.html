@@ -10,22 +10,22 @@
 
 <body>
     <header>
-    <nav class="navbar">
-        <img src="../IMAGENES/Imagotipo 2.png" alt="Logo" class="logo">
+        <nav class="navbar">
+            <img src="../IMAGENES/Imagotipo 2.png" alt="Logo" class="logo">
 
-        <ul class="Izquierda">
-            <li><a href="Index.html">Inicio</a></li>
-            <li><a href="Servicios.html">Servicios</a></li>
-            <li><a href="Nosotros.html">Nosotros</a></li>   
-        </ul>
+            <ul class="Izquierda">
+                <li><a href="Index.html">Inicio</a></li>
+                <li><a href="Servicios.html">Servicios</a></li>
+                <li><a href="Nosotros.html">Nosotros</a></li>
+            </ul>
 
-        <ul class="Derecha">
-            <li><a class="Inicio" href="IniciarS.html">Iniciar Sesión</a></li>
-            <li><a class="Crear" href="Registro.html">Crear Cuenta</a></li>  
-        </ul>
+            <ul class="Derecha">
+                <li><a class="Inicio" href="IniciarS.html">Iniciar Sesión</a></li>
+                <li><a class="Crear" href="Registro.html">Crear Cuenta</a></li>
+            </ul>
 
-    </nav>
-</header>
+        </nav>
+    </header>
 
     <main class="login-container">
         <section class="login-card">
@@ -34,23 +34,24 @@
 
             <form id="loginForm" action="../PHP/Iniciar.php" method="POST">
 
-        <div class="form-group">
-            <label for="User">Usuario</label>
-            <input type="text" id="User" name="User" placeholder="RJuanes123" required>
-        </div>
+                <div class="form-group">
+                    <label for="User">Usuario</label>
+                    <input type="text" id="User" name="User" placeholder="RJuanes123" required>
+                </div>
 
-        <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="********" required>
-        </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="********" required>
+                </div>
 
-    <button type="submit">Ingresar</button>
-    <p id="loginMessage" class="login-message"></p>
-</form>
+                <button type="submit">Ingresar</button>
+                <p id="loginMessage" class="login-message"></p>
+            </form>
             <p class="auth-link">¿No tienes cuenta? <a href="Registro.html">Regístrate aquí</a></p>
         </section>
     </main>
 
     <script src="../JS/login.js"></script>
 </body>
+
 </html>
