@@ -23,21 +23,21 @@ loginForm.addEventListener('submit', (event) => {
         method: 'POST',
         body: datos
     })
-    .then(response => response.text())
-    .then(respuestaPHP => {
-        // Usamos trim() para limpiar espacios invisibles o saltos de línea del PHP
-        if (respuestaPHP.trim().includes("correcto")) {
-    showMessage('¡Inicio de sesión exitoso! Redirigiendo...', 'success');
-    
-    setTimeout(() => {
-        // CORRECCIÓN DEFINITIVA: Sin '../HTML/' porque ya estás dentro de la carpeta de las vistas
-        window.location.href = "Index.html"; 
-    }, 1500);
-} else {
-            showMessage(respuestaPHP, 'error');
-        }
-    })
-    .catch(error => {
-        showMessage('Hubo un error en la conexión con el servidor.', 'error');
-    });
+        .then(response => response.text())
+        .then(respuestaPHP => {
+            // Usamos trim() para limpiar espacios invisibles o saltos de línea del PHP
+            if (respuestaPHP.trim().includes("correcto")) {
+                showMessage('¡Inicio de sesión exitoso! Redirigiendo...', 'success');
+
+                setTimeout(() => {
+                    window.location.href = "Index.html";
+                }, 1500);
+
+            } else {
+                showMessage(respuestaPHP, 'error');
+            }
+        })
+        .catch(error => {
+            showMessage('Hubo un error en la conexión con el servidor.', 'error');
+        });
 });

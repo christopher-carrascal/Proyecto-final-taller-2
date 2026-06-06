@@ -1,5 +1,5 @@
 <?php
-session_start(); // 👈 1. IMPORTANTE: Arranca el sistema de sesiones en la primera línea
+session_start(); //1. IMPORTANTE: Arranca el sistema de sesiones en la primera línea
 include("Conexion.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -13,9 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fila = mysqli_fetch_assoc($resultado);
         
         if (password_verify($password, $fila['Contra'])) {
-            // 2. Guardamos el nombre en la sesión del servidor
-            $_SESSION['usuario_logueado'] = $usuario; 
-            
+            // 2. Guardamos el nombre y el rol en la sesión del servidor
+            $_SESSION['usuario_logueado'] = $usuario;
+            $_SESSION['rol_usuario'] = $fila['Rol'];
+            $_SESSION['Rol'] = $fila['Rol'];
+
             echo "correcto";
         } else {
             echo "Contraseña incorrecta.";

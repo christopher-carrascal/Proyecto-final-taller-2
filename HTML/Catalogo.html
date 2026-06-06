@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticketa</title>
-    <link rel="stylesheet" href="../CSS/DiseñoIndex.css">
+    <title>Ticketa - Catálogo</title>
+    <link rel="stylesheet" href="../CSS/DiseñoCatalogo.css">
 </head>
 
 <header>
@@ -13,20 +13,15 @@
         <img src="../IMAGENES/Imagotipo 2.png" alt="Logo" class="logo">
 
         <ul class="Izquierda">
-            <li><a href="Index.html">Inicio</a></li>
+           <li><a href="Index.html">Inicio</a></li>
             <li><a href="Catalogo.html">Cátalogo</a></li>
             <li><a href="Servicios.html">Servicios</a></li>
             <li><a href="Nosotros.html">Nosotros</a></li>
         </ul>
 
         <ul class="Derecha" id="menu-auth">
-            <li class="invitado"><a class="Inicio" href="Carrito.html">Carrito</a></li>
             <li class="invitado"><a class="Inicio" href="IniciarS.html">Iniciar Sesión</a></li>
             <li class="invitado"><a class="Crear" href="Registro.html">Registrarse</a></li>
-
-            <li class="opcion-admin hidden">
-                <a class="MiCuenta" href="../PHP/Admin.php" style="color: #ff3b30; font-weight: bold;">Panel Admin</a>
-            </li>
 
             <li class="usuario-registrado hidden dropdown">
                 <a class="MiCuenta" href="#">Cuenta</a>
@@ -46,31 +41,19 @@
 
     <main class="CuerpoPrincipal">
 
-        <section class="CuerpoCentro">
-            <h1>Bienvenido a Ticketa</h1>
-            <p>Carrucel en construcción...</p>
-            
+        <section class="CatalogWrapper">
+            <h1 class="page-title">Catálogo de Productos</h1>
+            <p class="page-description">Explora nuestros productos disponibles y encuentra lo que más te gusta.</p>
+
+            <div class="ShopLayout">
+                <section class="Products" id="product-list">
+                    <p class="empty">Cargando productos...</p>
+                </section>
+            </div>
         </section>
 
-        <div class="CuerpoInferior">
-
-            <section class="CuerpoInferior-izquierda">
-                <h1>Por aqui encontrará:</h1>
-                <p>Más cosas en construcción...</p>
-            </section>
-
-            <aside class="Publicidad">
-                <div class="Publi1">
-                    <img src="../imagenes/Publi1.jpg" alt="Anuncio Falso">
-                </div>
-                <div class="Publi2">
-                    <img src="../imagenes/Publi2.jpg" alt="Anuncio Falso">
-                </div>
-            </aside>
-
-        </div>
-
         <script src="../JS/Index.js"></script>
+        <script src="../JS/Catalogo.js"></script>
     </main>
 
 </body>

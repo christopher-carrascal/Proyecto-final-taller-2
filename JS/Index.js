@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     fetch('../PHP/SiHay.php')
-        .then(response => response.json())
-        .then(data => {
+        .then(response => response.text())
+        .then(texto => {
+            const data = texto ? JSON.parse(texto) : {};
 
             if (data.logueado) {
 
@@ -24,25 +25,39 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }
 
-                // Dropdown
+                //Verifica si soy admin, y si lo soy, muestro el botón de admin
+                if (data.rol === 'admin') {
+                    const botonAdmin = document.querySelector('.opcion-admin');
+                    if (botonAdmin) {
+                        botonAdmin.classList.remove('hidden');
+                    }
+                }
+
+                // Dropdown de cuenta
                 const dropdown = document.querySelector('.dropdown');
-                const dropdownContent = document.querySelector('.dropdown-content');
+                const dropdownContent = dropdown?.querySelector('.dropdown-content');
+                const btnCuenta = dropdown?.querySelector('.MiCuenta');
                 const btnCerrar = document.querySelector('.btn-cerrar');
 
-                console.log("btnCerrar =", btnCerrar);
+                if (btnCuenta && dropdownContent) {
+                    btnCuenta.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        dropdownContent.classList.toggle('show');
+                    });
+                }
 
-                console.log("btnCerrar =", btnCerrar);
+                document.addEventListener('click', (e) => {
+                    if (!dropdown?.contains(e.target)) {
+                        dropdownContent?.classList.remove('show');
+                    }
+                });
 
                 if (btnCerrar) {
-
-                    btnCerrar.onclick = function (e) {
+                    btnCerrar.addEventListener('click', (e) => {
                         e.stopPropagation();
-
-                        console.log("CLICK EN CERRAR");
-
-                        window.location.href = this.href;
-                    };
-
+                        window.location.href = btnCerrar.href;
+                    });
                 }
             }
         })

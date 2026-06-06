@@ -35,6 +35,11 @@ registerForm.addEventListener('submit', (event) => {
 
       showMessage('¡Registro exitoso en la base de datos!', 'success');
       registerForm.reset();
+
+      setTimeout(() => {
+        window.location.href = "IniciarS.html"; 
+    }, 1500);
+
     })
     .catch(error => {
       showMessage('Hubo un error en la conexión con el servidor.', 'error');
