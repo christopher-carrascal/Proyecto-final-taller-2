@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Evento</title>
+    <link rel="stylesheet" href="../CSS/DiseñoIndex.css">
+    <link rel="stylesheet" href="../CSS/DiseñoEventoDetalle.css">
+</head>
+
+<header>
+    <nav class="navbar">
+        <img src="../IMAGENES/Imagotipo 2.png" alt="Logo" class="logo">
+
+        <ul class="Izquierda">
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="Catalogo.html">Cátalogo</a></li>
+            <li><a href="Servicios.html">Servicios</a></li>
+            <li><a href="Nosotros.html">Nosotros</a></li>
+        </ul>
+
+        <ul class="Derecha" id="menu-auth">
+            <li class="invitado"><a class="Inicio" href="Carrito.html">Carrito</a></li>
+            <li class="invitado"><a class="Inicio" href="IniciarS.html">Iniciar Sesión</a></li>
+            <li class="invitado"><a class="Crear" href="Registro.html">Registrarse</a></li>
+
+            <li class="opcion-admin hidden">
+                <a class="MiCuenta" href="PanelA.html" style="color: #ff3b30; font-weight: bold;">Panel Admin</a>
+            </li>
+
+            <li class="usuario-registrado hidden dropdown">
+                <a class="MiCuenta" href="#">Cuenta</a>
+                <div class="dropdown-content">
+                    <a href="Perfil.html">Mi Perfil</a>
+                    <a href="../PHP/CerrarS.php" class="btn-cerrar">Cerrar Sesión</a>
+                </div>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+<body>
+
+    <main class="CuerpoPrincipal">
+        <section class="CuerpoCentro detalle-evento">
+            <div class="detalle-contenido">
+                <div id="evento-error" class="evento-detalle-error"></div>
+                <div class="detalle-informacion">
+                    <h1 id="evento-nombre">Cargando evento...</h1>
+                    <p id="evento-fecha"></p>
+                    <p id="evento-ubicacion"></p>
+                    <p id="evento-precio"></p>
+                    <p id="evento-descripcion"></p>
+                    <button id="btn-agregar-carrito" class="btn-agregar" disabled>Agregar al carrito</button>
+                </div>
+                <div class="imagen-detalle">
+                    <img id="evento-imagen" src="" alt="Imagen del evento">
+                </div>
+                <a class="btn-regresar" href="Index.html">Regresar</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="../JS/EventoDetalle.js"></script>
+</body>
+
+</html>

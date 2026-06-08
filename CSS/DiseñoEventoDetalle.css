@@ -1,0 +1,68 @@
+.detalle-evento {
+    background-color: #ffffff;
+    color: #111827;
+    padding: 30px;
+    min-height: calc(100vh - 150px);
+}
+
+.detalle-contenido {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    display: grid;
+    gap: 24px;
+}
+
+.detalle-evento h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+.detalle-evento p {
+    margin: 10px 0;
+    color: #4b5563;
+    font-size: 1rem;
+}
+
+.detalle-informacion {
+    display: grid;
+    gap: 18px;
+}
+
+.imagen-detalle img {
+    width: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.btn-regresar {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #0076fe;
+    color: #ffffff;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-regresar:hover {
+    background: #005ed8;
+}
+
+.evento-detalle-error {
+    display: none;
+    padding: 18px;
+    border-radius: 12px;
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+.evento-detalle-error.visible {
+    display: block;
+}

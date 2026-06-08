@@ -20,12 +20,16 @@
         </ul>
 
         <ul class="Derecha" id="menu-auth">
-            <li class="invitado"><a class="Inicio" href="Carrito.html">Carrito</a></li>
             <li class="invitado"><a class="Inicio" href="IniciarS.html">Iniciar Sesión</a></li>
             <li class="invitado"><a class="Crear" href="Registro.html">Registrarse</a></li>
 
+            <li class="usuario-registrado hidden">
+                <a class="MiCarro" href="Carrito.html"
+                    style="background-color: #0076fe; color: white; padding: 8px 15px; border-radius: 6px; font-weight: bold; text-decoration: none;">Carrito</a>
+            </li>
+
             <li class="opcion-admin hidden">
-                <a class="MiCuenta" href="../PHP/Admin.php" style="color: #ff3b30; font-weight: bold;">Panel Admin</a>
+                <a class="MiCuenta" href="PanelA.html" style="color: #ff3b30; font-weight: bold;">Panel Admin</a>
             </li>
 
             <li class="usuario-registrado hidden dropdown">
@@ -48,15 +52,61 @@
 
         <section class="CuerpoCentro">
             <h1>Bienvenido a Ticketa</h1>
-            <p>Carrucel en construcción...</p>
-            
+            <p>Disfruta con las últimas promociones.</p>
+
+            <div class="carousel" id="imageCarousel">
+                <div class="carousel-slide active">
+                    <img src="../IMAGENES/Bruh/1780882210_Publi2.jpg" alt="Promoción 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="../IMAGENES/Bruh/1780892263_brr brr.jpg" alt="Promoción 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="../IMAGENES/Bruh/1780943738_Increible.jpg" alt="Promoción 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="../IMAGENES/Bruh/1780944933_HGLn31mbgAABGY-.jpg" alt="Promoción 4">
+                </div>
+                <button class="carousel-button prev" type="button">&#10094;</button>
+                <button class="carousel-button next" type="button">&#10095;</button>
+                <div class="carousel-indicators">
+                    <button class="carousel-indicator active" data-slide="0" type="button"></button>
+                    <button class="carousel-indicator" data-slide="1" type="button"></button>
+                    <button class="carousel-indicator" data-slide="2" type="button"></button>
+                    <button class="carousel-indicator" data-slide="3" type="button"></button>
+                </div>
+            </div>
         </section>
 
         <div class="CuerpoInferior">
 
             <section class="CuerpoInferior-izquierda">
-                <h1>Por aqui encontrará:</h1>
-                <p>Más cosas en construcción...</p>
+                <div class="eventos-panel">
+                    <div class="eventos-header">
+                        <h1>EVENTOS:</h1>
+                        <div class="filtro-eventos">
+                            <div class="busqueda-eventos">
+                                <label for="busqueda-eventos-input">Buscar:</label>
+                                <input id="busqueda-eventos-input" type="search"
+                                    placeholder="Buscar por nombre, lugar o descripción">
+                            </div>
+                            <div class="precio-eventos">
+                                <label for="precio-eventos-select">Precio:</label>
+                                <select id="precio-eventos-select">
+                                    <option value="">Todos</option>
+                                    <option value="0-100">Hasta $100</option>
+                                    <option value="101-200">$101 - $200</option>
+                                    <option value="201-300">$201 - $300</option>
+                                    <option value="301-500">$301 - $500</option>
+                                    <option value="501-">Más de $500</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedorE" id="contenedor-eventos"></div>
+                    <p class="sin-resultados hidden" id="sin-resultados">No se encontraron eventos con esos criterios.
+                    </p>
+                </div>
             </section>
 
             <aside class="Publicidad">
@@ -70,6 +120,7 @@
 
         </div>
 
+        <script src="../JS/FiltradoEventos.js"></script>
         <script src="../JS/Index.js"></script>
     </main>
 

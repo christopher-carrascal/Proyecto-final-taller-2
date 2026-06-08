@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketa - Panel Admin</title>
+    <link rel="stylesheet" href="../CSS/DiseñoPanelA.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <img src="../IMAGENES/Imagotipo 2.png" alt="Logo" class="logo">
+
+            <ul class="Izquierda">
+                <li><a href="Index.html">Inicio</a></li>
+                <li><a href="Catalogo.html">Cátalogo</a></li>
+                <li><a href="Servicios.html">Servicios</a></li>
+                <li><a href="Nosotros.html">Nosotros</a></li>
+            </ul>
+
+            <ul class="Derecha" id="menu-auth">
+                <li class="invitado"><a class="Inicio" href="Carrito.html">Carrito</a></li>
+                <li class="invitado"><a class="Inicio" href="IniciarS.html">Iniciar Sesión</a></li>
+                <li class="invitado"><a class="Crear" href="Registro.html">Registrarse</a></li>
+
+                <li class="opcion-admin hidden">
+                    <a class="MiCuenta" href="PanelA.html" style="color: #ff3b30; font-weight: bold;">Panel Admin</a>
+                </li>
+
+                <li class="usuario-registrado hidden dropdown">
+                    <a class="MiCuenta" href="#">Cuenta</a>
+                    <div class="dropdown-content">
+                        <a href="Perfil.html">Mi Perfil</a>
+                        <a href="../PHP/CerrarS.php" class="btn-cerrar">Cerrar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main class="CuerpoPrincipal">
+
+        <section class="CuerpoCentro">
+
+            <h1 class="Titulo">ORGANIZACIÓN DE EVENTOS</h1>
+
+            <h2 class="Subtitulo">Crear nuevo evento</h2>
+
+            <form class="Formulario" id="formulario-evento" action="../PHP/GuardarE.php" method="POST"
+                enctype="multipart/form-data">
+
+                <section class="CuerpoIzquierda">
+
+                    <input type="text" id="nombreE" name="NombreE" placeholder="Nombre del evento" required>
+                    <input type="date" id="fechaE" name="FechaE" required>
+                    <input type="text" id="ubicacionE" name="UbicacionE" placeholder="Ubicación del evento" required>
+                    <input type="number" id="precioE" name="PrecioE" placeholder="Precio de la entrada" required>
+                    <textarea id="descripcionE" name="DescripcionE" placeholder="Descripción del evento" rows="4"
+                        required></textarea>
+
+                </section>
+
+                <section class="CuerpoDerecha">
+
+                    <label id="zona-imagen" class="Imagen upload-box" for="imagen-evento">
+                        <img id="preview-imagen" src="" alt="Inserte la imagen" hidden>
+                    </label>
+                    <input type="file" id="imagen-evento" name="imagen-evento" accept="image/*" hidden required>
+
+                </section>
+
+                <button type="submit">Crear Evento</button>
+            </form>
+
+        </section>
+
+        <section class="SeccionBorrar">
+
+            <h2 class="Subtitulo">Borrar un evento existente</h2>
+
+            <form class="Formulario" id="formularioBorrar" action="../PHP/BorrarE.php" method="POST">
+
+                <section class="CuerpoIzquierda">
+                    <label for="idBorrar" style="font-weight: bold; color: #000000;">Ingrese el ID del
+                        evento a borrar</label>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
+                        <input type="number" id="idBorrar" name="IdBorrar" required
+                            style="width: 100%; box-sizing: border-box;">
+                        <button type="button" id="btnBuscarBorrar"
+                            style="width: 100%; padding: 10px 0; margin: 0; background-color: #0076fe; border-radius: 8px; color: white; border: none; font-weight: bold; cursor: pointer;">Buscar</button>
+                    </div>
+
+                </section>
+
+                <section class="CuerpoDerecha" id="vista-previa-borrar">
+                    <div class="placeholder-borrar"
+                        style="color: #8e8e93; border: 2px dashed #ccc; border-radius: 8px; padding: 20px; text-align: center; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        Aquí aparecerá la vista previa del evento seleccionado
+                    </div>
+                </section>
+
+                <button type="submit" id="btnEliminar" style="background-color: #ff3b30;" disabled>Eliminar Evento
+                    Definitivamente</button>
+            </form>
+
+        </section>
+
+    </main>
+
+    <script src="../JS/PanelA.js"></script>
+</body>
+
+</html>

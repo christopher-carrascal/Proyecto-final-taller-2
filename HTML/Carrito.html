@@ -13,7 +13,7 @@
         <img src="../IMAGENES/Imagotipo 2.png" alt="Logo" class="logo">
 
         <ul class="Izquierda">
-           <li><a href="Index.html">Inicio</a></li>
+            <li><a href="Index.html">Inicio</a></li>
             <li><a href="Catalogo.html">Cátalogo</a></li>
             <li><a href="Servicios.html">Servicios</a></li>
             <li><a href="Nosotros.html">Nosotros</a></li>
@@ -42,18 +42,22 @@
     <main class="CuerpoPrincipal">
 
         <section class="CatalogWrapper">
-            <h1 class="page-title">Catálogo de Productos</h1>
-            <p class="page-description">Explora nuestros productos disponibles y encuentra lo que más te gusta.</p>
+            <h1 class="page-title">Tu Carrito</h1>
+            <p class="page-description">Revisa los eventos que agregaste y ajusta las cantidades antes de pagar.</p>
 
-            <div class="ShopLayout">
-                <section class="Products" id="product-list">
-                    <p class="empty">Cargando productos...</p>
-                </section>
+            <div class="ShopLayout cart-layout">
+                <section class="cart-items-container" id="cart-items"></section>
+                <div class="cart-summary">
+                    <p>Subtotal: <strong id="cart-subtotal">$0.00</strong></p>
+                    <div class="cart-actions">
+                        <button id="clear-cart" class="btn secondary">Vaciar carrito</button>
+                        <button id="checkout" class="btn primary">Pagar</button>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <script src="../JS/Index.js"></script>
-        <script src="../JS/Catalogo.js"></script>
+        <script src="../JS/Carrito.js"></script>
     </main>
 
 </body>
