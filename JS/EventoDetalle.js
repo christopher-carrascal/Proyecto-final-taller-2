@@ -118,7 +118,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (addButton) {
                 addButton.disabled = false;
                 addButton.addEventListener('click', () => {
-                    addEventoAlCarrito(detalleEvento);
+                    fetch('../PHP/SiHay.php')
+                        .then(response => response.text())
+                        .then(texto => {
+                            const data = texto ? JSON.parse(texto) : {};
+
+                            //Si no esta logueado...
+                            if (!data.logueado) {
+                                window.location.href = 'IniciarS.html';
+                                return;
+                            }
+
+                            addEventoAlCarrito(detalleEvento);
+                        })
+                        .catch(() => {
+                            window.location.href = 'IniciarS.html';
+                        });
                 });
             }
         })

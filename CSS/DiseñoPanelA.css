@@ -1,9 +1,10 @@
 header {
-    background-color: #FEFEFE;
+    background-color: #101011;
     color: white;
     padding: 0px;
     text-align: center;
     gap: 5px;
+    border-bottom: 1px solid #dda72a;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
@@ -37,7 +38,7 @@ header ul {
 
 header ul li a {
     text-decoration: none;
-    color: #333333;
+    color: #ffffff;
     font-family: cursive;
     font-weight: bold;
     font-size: 20px;
@@ -45,7 +46,7 @@ header ul li a {
 }
 
 header ul li a:hover {
-    color: #0076fe;
+    color: #dda72a;
     text-decoration: none;
 }
 
@@ -64,7 +65,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0px;
-    background-color: #52a7d1;
+    background: linear-gradient(to bottom, #3b3b3c, #000000);
+    color: #ffffff;
 }
 
 .hidden {
@@ -80,9 +82,10 @@ body {
     display: none;
     position: absolute;
     right: 0;
-    background-color: #FEFEFE;
+    background-color: #17171a;
     min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+    border: 1px solid #dda72a;
     border-radius: 8px;
     z-index: 1000;
     margin-top: 10px;
@@ -90,7 +93,7 @@ body {
 }
 
 .dropdown-content a {
-    color: #333333;
+    color: #ffffff;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -101,8 +104,8 @@ body {
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
-    color: #0076fe;
+    background-color: #1f2023;
+    color: #dda72a;
 }
 
 .dropdown-content.show {
@@ -120,12 +123,14 @@ body {
 }
 
 .CuerpoCentro {
-    background-color: #FEFEFE;
+    background-color: #101011;
     gap: 20px;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dda72a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    color: #ffffff;
 }
 
 .Formulario {
@@ -146,20 +151,29 @@ body {
     width: 100%;
     box-sizing: border-box;
     padding: 10px 12px;
-    border: 1px solid #cfd8dc;
+    border: 1px solid #dda72a;
     border-radius: 8px;
     font-size: 14px;
+    background-color: #17171a;
+    color: #ffffff;
+}
+
+.Formulario input[type="text"]::placeholder,
+.Formulario input[type="date"]::placeholder,
+.Formulario input[type="number"]::placeholder,
+.Formulario textarea::placeholder {
+    color: #f3f4f6;
+    opacity: 1;
 }
 
 .Formulario button {
-    /*Order lo que hace es que el boton se coloque abajo de los inputs*/
     order: 2;
     flex-basis: 100%;
     align-self: center;
     margin-top: 18px;
-    background-color: #0076fe;
-    color: white;
-    border: none;
+    background-color: #dda72a;
+    color: #101011;
+    border: 1px solid #f2d06b;
     cursor: pointer;
     font-weight: bold;
     padding: 10px 12px;
@@ -167,10 +181,9 @@ body {
     font-size: 14px;
 }
 
-.Formulario button {
-
-    background-color: #0076fe;
-
+.Formulario button:hover {
+    background-color: #f0c24d;
+}
     /*width: 220px;
     display: block;
     margin: 18px auto 0;
@@ -182,7 +195,6 @@ body {
     padding: 10px 12px;
     border-radius: 8px;
     font-size: 14px;*/
-}
 
 .upload-box {
     display: flex;
@@ -190,28 +202,24 @@ body {
     align-items: center;
     justify-content: center;
     gap: 4px;
-    border: 2px dashed #0076fe;
-
+    border: 2px dashed #dda72a;
     border-radius: 10px;
     padding: 14px;
-    background-color: #f3f8ff;
-    color: #0b4f9b;
+    background-color: #17171a;
+    color: #ffffff;
     cursor: pointer;
     text-align: center;
 }
 
-.Imagen small {
-    color: #5b6b7a;
-}
 
 .Imagen {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #dbe4ee;
+    border: 1px solid #dda72a;
     border-radius: 10px;
-    background: #f8fbff;
+    background: #17171a;
     padding: 12px;
     width: 100%;
     min-height: 140px;
@@ -227,10 +235,16 @@ body {
     text-align: center;
 }
 
+.CuerpoIzquierda label{
+
+    color: white;
+}
+
 .CuerpoIzquierda,
 .CuerpoDerecha {
     display: flex;
     flex: 1;
+    color: white;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
@@ -255,12 +269,14 @@ body {
     width: 100%;
     box-sizing: border-box;
     padding: 10px 12px;
-    border: 1px solid #cfd8dc;
+    border: 1px solid #dda72a;
     border-radius: 8px;
     font-size: 14px;
     min-height: 120px;
     resize: vertical;
     font-family: Arial, sans-serif;
+    background-color: #17171a;
+    color: #ffffff;
 }
 
 .Dashboard {
@@ -276,26 +292,27 @@ body {
 }
 
 .DashboardCard {
-    background: #f8fbff;
-    border: 1px solid #cfd8dc;
+    background: #17171a;
+    border: 1px solid #dda72a;
     border-radius: 14px;
     padding: 22px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 120px;
+    color: #ffffff;
 }
 
 .DashboardLabel {
-    color: #5b6b7a;
+    color: #e6d3a1;
     font-size: 0.95rem;
     margin-bottom: 12px;
     display: block;
 }
 
 .DashboardValue {
-    color: #1d2330;
+    color: #ffffff;
     font-size: 2rem;
     font-weight: 800;
 }
@@ -303,24 +320,27 @@ body {
 /* Parte borrar eventos*/
 /*--------------------------------------------*/
 .SeccionBorrar {
-    background-color: #FEFEFE;
-    gap: 20px; /*Me fui a almorzar :b*/
+    background-color: #101011;
+    gap: 20px;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #dda72a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    color: #ffffff;
 }
 
 /*--------------------------------------------*/
 
 .ParteInferior{
-
     flex: 4;
-    background-color: #FEFEFE;
+    background-color: #101011;
     gap: 20px;
     border-radius: 12px;
+    border: 1px solid #dda72a;
     text-align: center;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
+    color: #ffffff;
 }

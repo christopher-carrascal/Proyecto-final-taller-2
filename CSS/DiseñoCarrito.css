@@ -1,9 +1,10 @@
 header {
-    background-color: #FEFEFE;
+    background-color: #101011;
     color: white;
     padding: 0px;
     text-align: center;
     gap: 5px;
+    border-bottom: 1px solid #dda72a;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
@@ -37,7 +38,7 @@ header ul {
 
 header ul li a {
     text-decoration: none;
-    color: #333333;
+    color: #ffffff;
     font-family: cursive;
     font-weight: bold;
     font-size: 20px;
@@ -45,7 +46,7 @@ header ul li a {
 }
 
 header ul li a:hover {
-    color: #0076fe;
+    color: #dda72a;
     text-decoration: none;
 }
 
@@ -72,9 +73,10 @@ header ul li a:hover {
     display: none;
     position: absolute;
     right: 0;
-    background-color: #FEFEFE;
+    background-color: #17171a;
     min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+    border: 1px solid #dda72a;
     border-radius: 8px;
     z-index: 1000;
     margin-top: 10px;
@@ -82,7 +84,7 @@ header ul li a:hover {
 }
 
 .dropdown-content a {
-    color: #333333;
+    color: #ffffff;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -93,8 +95,8 @@ header ul li a:hover {
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
-    color: #0076fe;
+    background-color: #1f2023;
+    color: #dda72a;
 }
 
 .dropdown-content.show {
@@ -102,23 +104,24 @@ header ul li a:hover {
 }
 
 :root {
-    --bg: #f2f6fb;
-    --surface: #ffffff;
-    --surface-soft: #f8fbff;
-    --text: #111827;
-    --muted: #6b7280;
-    --primary: #2563eb;
-    --primary-soft: #eff6ff;
-    --danger: #dc2626;
+    --bg: #0b0b0d;
+    --surface: #101011;
+    --surface-soft: #17171a;
+    --text: #ffffff;
+    --muted: #d4d8de;
+    --primary: #dda72a;
+    --primary-soft: #2b2414;
+    --danger: #ff6b6b;
     --radius: 18px;
-    --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
 }
 
 body {
     margin: 0;
     font-family: "Inter", system-ui, sans-serif;
-    background: radial-gradient(circle at top, rgba(37, 99, 235, 0.12), transparent 28%),
-        linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+    background: radial-gradient(circle at top, rgba(221, 167, 42, 0.08), transparent 28%),
+        linear-gradient(180deg, #0b0b0d 0%, #101011 100%);
+    background: linear-gradient(to bottom, #3b3b3c, #000000);
     color: var(--text);
 }
 
@@ -173,6 +176,7 @@ button {
 .cart-items-container,
 .cart-summary {
     background: var(--surface);
+    border: 1px solid #dda72a;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 26px;
@@ -218,14 +222,14 @@ button {
 
 .btn.primary {
     background: var(--primary);
-    color: #fff;
-    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.18);
+    color: #101011;
+    box-shadow: 0 14px 30px rgba(221, 167, 42, 0.18);
 }
 
 .btn.secondary {
     background: var(--surface-soft);
     color: var(--text);
-    border: 1px solid rgba(148, 163, 184, 0.24);
+    border: 1px solid #dda72a;
 }
 
 /* Cart items */
@@ -236,8 +240,8 @@ button {
     align-items: center;
     padding: 18px;
     border-radius: 16px;
-    background: #f8fbff;
-    border: 1px solid rgba(37, 99, 235, 0.12);
+    background: #17171a;
+    border: 1px solid #dda72a;
 }
 
 .cart-item img {
@@ -261,7 +265,7 @@ button {
 
 .cart-item .meta p {
     margin: 0;
-    color: var(--primary);
+    color: #ffd36a;
     font-weight: 700;
 }
 
@@ -270,24 +274,24 @@ button {
     align-items: center;
     gap: 12px;
     border-radius: 999px;
-    background: #ffffff;
+    background: #17171a;
     padding: 6px 10px;
-    border: 1px solid rgba(148, 163, 184, 0.16);
+    border: 1px solid #dda72a;
 }
 
 .qty-controls button {
     width: 34px;
     height: 34px;
-    border: 1px solid rgba(148, 163, 184, 0.22);
+    border: 1px solid #dda72a;
     border-radius: 10px;
-    background: #fff;
-    color: var(--text);
+    background: #101011;
+    color: #fff;
     transition: background-color 0.2s;
 }
 
 .qty-controls button:hover {
-    background: var(--primary-soft);
-    color: var(--primary);
+    background: #2b2414;
+    color: #ffd36a;
 }
 
 .qty-controls .qty {
@@ -303,9 +307,9 @@ button {
 
 .remove .btn.secondary {
     padding: 10px 16px;
-    background: #fff5f5;
-    color: var(--danger);
-    border-color: rgba(220, 38, 38, 0.16);
+    background: #17171a;
+    color: #ffb4b4;
+    border-color: rgba(255, 107, 107, 0.35);
 }
 
 .empty {
@@ -313,9 +317,9 @@ button {
     text-align: center;
     color: var(--muted);
     font-size: 1rem;
-    border: 1px dashed rgba(148, 163, 184, 0.38);
+    border: 1px dashed #dda72a;
     border-radius: 16px;
-    background: #f9fbff;
+    background: #17171a;
 }
 
 .cart-summary {
@@ -329,8 +333,8 @@ button {
     gap: 16px;
     padding: 22px;
     border-radius: 16px;
-    background: var(--surface-soft);
-    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: #17171a;
+    border: 1px solid #dda72a;
 }
 
 .summary-card h3 {
@@ -385,4 +389,3 @@ button {
         width: 100%;
     }
 }
-

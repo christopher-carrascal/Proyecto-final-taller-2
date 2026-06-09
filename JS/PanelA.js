@@ -44,15 +44,13 @@ fetch('../PHP/SiHay.php')
             });
 
             // Mostrar menú de usuario y poner nombre si existe
-            const botonCuenta = document.querySelector('.usuario-registrado');
+            document.querySelectorAll('.usuario-registrado').forEach(elemento => {
+                elemento.classList.remove('hidden');
+            });
 
+            const botonCuenta = document.querySelector('.dropdown .MiCuenta');
             if (botonCuenta) {
-                botonCuenta.classList.remove('hidden');
-
-                const enlaceTexto = botonCuenta.querySelector('.MiCuenta');
-                if (enlaceTexto) {
-                    enlaceTexto.textContent = `Cuenta${data.usuario ? ` (${data.usuario})` : ''}`;
-                }
+                botonCuenta.textContent = `Cuenta${data.usuario ? ` (${data.usuario})` : ''}`;
             }
 
             // Verifica si soy admin, y si lo soy, muestro el botón de admin

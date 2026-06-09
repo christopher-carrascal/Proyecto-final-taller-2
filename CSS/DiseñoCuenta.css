@@ -1,9 +1,10 @@
 header{
-    background-color: #FEFEFE;
+    background-color: #101011;
     color: white;
     padding: 0px;
     text-align: center;
     gap : 5px;
+    border-bottom: 1px solid #dda72a;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
@@ -31,7 +32,7 @@ header ul {
 
 header ul li a {
     text-decoration: none;
-    color: #333333;
+    color: #ffffff;
     font-family: cursive;
     font-weight: bold;
     font-size: 20px;
@@ -54,15 +55,17 @@ header ul li a {
 
 .form-group input{
     padding: 10px;
-    border: 1px solid #cfd7ee;
+    border: 1px solid #dda72a;
     border-radius: 10px;
     font-size: 16px;
     width: 100%;
     box-sizing: border-box;
+    background-color: #17171a;
+    color: #ffffff;
 }
 /*-------------------------------------------------*/
 header ul li a:hover {
-    color: #0076fe;
+    color: #dda72a;
     text-decoration: none;
 }
 
@@ -70,7 +73,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0px;
     padding: 0px;
-    background-color: #52a7d1;
+    background: linear-gradient(to bottom, #3b3b3c, #000000);
+    color: #ffffff;
 }
 
 .Derecha{
@@ -89,9 +93,10 @@ body {
 .login-card {
     width: 100%;
     max-width: 600px;
-    background: white;
+    background: #101011;
+    border: 1px solid #dda72a;
     border-radius: 16px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
     padding: 32px;
 }
 
@@ -99,11 +104,11 @@ body {
     margin-top: 0;
     margin-bottom: 12px;
     font-size: 28px;
-    color: #1c2e61;
+    color: #ffffff;
 }
 
 .login-card p {
-    color: #4a4a4a;
+    color: #e5e7eb;
     margin-bottom: 24px;
 }
 
@@ -111,7 +116,7 @@ body {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #333333;
+    color: #ffffff;
 }
 
 .form-toggle {
@@ -124,18 +129,18 @@ body {
 .form-toggle button {
     flex: 1;
     padding: 12px 14px;
-    border: 1px solid #cfd7ee;
+    border: 1px solid #dda72a;
     border-radius: 10px;
-    background: #f5f7ff;
-    color: #2e4db4;
+    background: #17171a;
+    color: #ffffff;
     font-weight: bold;
     cursor: pointer;
 }
 
 .form-toggle button.active {
-    background: #3a63d7;
-    color: white;
-    border-color: #2e4db4;
+    background: #dda72a;
+    color: #101011;
+    border-color: #f2d06b;
 }
 
 .hidden {
@@ -145,17 +150,17 @@ body {
 .login-card button {
     width: 100%;
     padding: 14px;
-    background-color: #3a63d7;
-    border: none;
+    background-color: #dda72a;
+    border: 1px solid #f2d06b;
     border-radius: 10px;
-    color: white;
+    color: #101011;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
 }
 
 .login-card button:hover {
-    background-color: #2e4db4;
+    background-color: #f0c24d;
 }
 
 .login-message {
@@ -175,17 +180,17 @@ body {
 .auth-link {
     text-align: center;
     margin-top: 16px;
-    color: #4a4a4a;
+    color: #e5e7eb;
 }
 
 .auth-link a {
-    color: #3a63d7;
+    color: #dda72a;
     text-decoration: none;
     font-weight: bold;
 }
 
 .auth-link a:hover {
-    color: #2e4db4;
+    color: #f0c24d;
     text-decoration: underline;
 }
 /*--------------------------------------------------*/

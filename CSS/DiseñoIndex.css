@@ -1,9 +1,10 @@
 header {
-    background-color: #FEFEFE;
+    background-color: #101011;
     color: white;
     padding: 0px;
     text-align: center;
     gap: 5px;
+    border-bottom: 1px solid #dda72a;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 }
@@ -37,7 +38,7 @@ header ul {
 
 header ul li a {
     text-decoration: none;
-    color: #333333;
+    color: white;
     font-family: cursive;
     font-weight: bold;
     font-size: 20px;
@@ -64,7 +65,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0px;
-    background-color: #52a7d1;
+    background: linear-gradient(to bottom, #3b3b3c, #000000);
 }
 
 .CuerpoPrincipal {
@@ -75,6 +76,24 @@ body {
     gap: 20px;
 }
 
+.CuerpoPrincipal p{
+
+    font-size: 50px;
+    color: white;
+    /*Esto añade un borde de colores al texto, muy bonito*/
+
+    font-family: Arial;
+}
+
+.CuerpoPrincipal h1{
+
+    /*Esto añade un borde de colores al texto, muy bonito*/
+    /*-webkit-text-stroke: 1px #000000;*/
+    /*Y este añade brillo, pues son sombras pero se ven como brillo*/
+    text-shadow: 0 0 5px #000000, 0 0 5px #000000;
+    font-family: Pacifico;
+}
+
 .CuerpoCentro {
     position: relative;
     background-color: transparent;
@@ -82,17 +101,21 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px;
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     overflow: hidden;
     min-height: 420px;
+    color: #101011;
+    height: 450px;
+    width: 100%;
+    box-sizing: border-box; 
     color: #FFFFFF;
 }
 
 .CuerpoCentro h1,
 .CuerpoCentro p {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
     position: relative;
     z-index: 3;
     margin: 0 auto;
@@ -103,6 +126,10 @@ body {
     font-size: clamp(2.8rem, 5vw, 4.4rem);
     line-height: 1.05;
     margin-bottom: 18px;
+}
+
+.CuerpoInferior-izquierda h1{
+    color: #dda72a;
 }
 
 .CuerpoCentro p {
@@ -119,7 +146,7 @@ body {
 
 .CuerpoInferior-izquierda {
     flex: 4;
-    background-color: #FEFEFE;
+    background-color: #101011;
     gap: 20px;
     border-radius: 12px;
     text-align: center;
@@ -153,7 +180,7 @@ body {
 .filtro-eventos label {
     display: block;
     font-size: 0.95rem;
-    color: #1f2937;
+    color: #dda72a;
     margin-bottom: 6px;
 }
 
@@ -161,6 +188,7 @@ body {
 .categoria-eventos,
 .precio-eventos {
     display: flex;
+    color: white;
     flex-direction: column;
     min-width: 180px;
 }
@@ -170,14 +198,22 @@ body {
 .precio-eventos select {
     width: 100%;
     padding: 10px 12px;
-    border: 1px solid #d1d5db;
+    border: 2px solid #dda72a;
     border-radius: 10px;
     font-size: 0.95rem;
-    color: #111827;
+    background-color: #101011;
+    color: #fff;
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     box-sizing: border-box;
     min-height: 44px;
+}
+
+.busqueda-eventos input::placeholder,
+.categoria-eventos select::placeholder,
+.precio-eventos select::placeholder {
+    color: #fff;
+    opacity: 1;
 }
 
 .busqueda-eventos input:focus,
@@ -203,14 +239,14 @@ body {
 .tarjeta-evento-guardado {
     display: flex;
     flex-direction: column;
-    background: #ffffff;
+    background: #101011;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-    border: 1px solid #e6e6e6;
+    border: 1px solid #dda72a;
     text-align: left;
     text-decoration: none;
-    color: inherit;
+    color: #fff;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -231,15 +267,22 @@ body {
     padding: 15px;
 }
 
+.evento-texto h2,
+.evento-texto p {
+    color: white;
+}
+
+.precio-eventos-select{
+    border: 1px solid #dda72a;
+}
+
 .evento-texto h2 {
     margin: 0 0 10px;
     font-size: 18px;
-    color: #1f2937;
 }
 
 .evento-texto p {
     margin: 6px 0;
-    color: #4b5563;
     font-size: 14px;
 }
 
@@ -258,7 +301,7 @@ body {
 .Publicidad {
     flex: 0.7;
     margin-top: 0px;
-    background-color: #FEFEFE;
+    background-color: #101011;
     padding: 10px;
     border-radius: 8px;
     align-items: center;
@@ -323,7 +366,13 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    object-position: center;
+}
+
+.carousel-indicator.active {
+    background: white;
+    color: white;
+    transform: scale(1.1);
 }
 
 .carousel-button,
@@ -384,7 +433,7 @@ body {
 }
 
 .carousel-indicator.active {
-    background: #0076fe;
+    background: #000000;
     transform: scale(1.1);
 }
 
