@@ -80,33 +80,56 @@
 
         <section class="SeccionBorrar">
 
-            <h2 class="Subtitulo">Borrar un evento existente</h2>
+            <h2 class="Subtitulo">Gestionar Evento Existente (Modificar / Eliminar)</h2>
 
-            <form class="Formulario" id="formularioBorrar" action="../PHP/BorrarE.php" method="POST">
+            <form class="Formulario" id="formularioGestion">
 
                 <section class="CuerpoIzquierda">
-                    <label for="idBorrar" style="font-weight: bold; color: #000000;">Ingrese el ID del
-                        evento a borrar</label>
-
+                    <label for="idBorrar"
+                        style="font-weight: bold; color: #000000; display: block; margin-bottom: 8px;">Ingrese el ID del
+                        evento</label>
                     <div style="display: flex; flex-direction: column; gap: 12px; width: 100%;">
-                        <input type="number" id="idBorrar" name="IdBorrar" required
+                        <input type="number" id="idBorrar" name="IdEvento" placeholder="Ej: 5" required
                             style="width: 100%; box-sizing: border-box;">
                         <button type="button" id="btnBuscarBorrar"
-                            style="width: 100%; padding: 10px 0; margin: 0; background-color: #0076fe; border-radius: 8px; color: white; border: none; font-weight: bold; cursor: pointer;">Buscar</button>
+                            style="width: 100%; padding: 10px 0; margin: 0; background-color: #5856d6; border-radius: 8px; color: white; border: none; font-weight: bold; cursor: pointer;">Buscar
+                            Evento</button>
                     </div>
-
                 </section>
 
                 <section class="CuerpoDerecha" id="vista-previa-borrar">
                     <div class="placeholder-borrar"
-                        style="color: #8e8e93; border: 2px dashed #ccc; border-radius: 8px; padding: 20px; text-align: center; height: 100%; display: flex; align-items: center; justify-content: center;">
-                        Aquí aparecerá la vista previa del evento seleccionado
+                        style="color: #8e8e93; border: 2px dashed #ccc; border-radius: 8px; padding: 20px; text-align: center; height: 100%; display: flex; align-items: center; justify-content: center; width: 100%; box-sizing: border-box;">
+                        Busque un ID para cargar y editar los datos del evento
                     </div>
                 </section>
 
-                <button type="submit" id="btnEliminar" style="background-color: #ff3b30;" disabled>Eliminar Evento
-                    Definitivamente</button>
             </form>
+
+        </section>
+
+        <section class="ParteInferior">
+
+            <section class="Dashboard">
+                <div class="DashboardGrid">
+                    <div class="DashboardCard">
+                        <span class="DashboardLabel">Total de usuarios</span>
+                        <strong id="dashboard-total-usuarios" class="DashboardValue">0</strong>
+                    </div>
+                    <div class="DashboardCard">
+                        <span class="DashboardLabel">Total de cuentas creadas</span>
+                        <strong id="dashboard-total-cuentas" class="DashboardValue">0</strong>
+                    </div>
+                    <div class="DashboardCard">
+                        <span class="DashboardLabel">Total eventos</span>
+                        <strong id="dashboard-total-eventos" class="DashboardValue">0</strong>
+                    </div>
+                    <div class="DashboardCard">
+                        <span class="DashboardLabel">Total dinero ganado</span>
+                        <strong id="dashboard-total-dinero" class="DashboardValue">$0.00</strong>
+                    </div>
+                </div>
+            </section>
 
         </section>
 

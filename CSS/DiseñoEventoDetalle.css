@@ -54,6 +54,27 @@
     background: #005ed8;
 }
 
+.btn-agregar {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #0076fe;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-agregar:hover {
+    background: #005ed8;
+    transform: translateY(-1px);
+}
+
+.btn-agregar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .evento-detalle-error {
     display: none;
     padding: 18px;

@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     fetch('../PHP/SiHay.php')
-        .then(response => response.text())
-        .then(texto => {
-            const data = texto ? JSON.parse(texto) : {};
-
+        .then(response => response.json())
+        .then(data => {
             if (data.logueado) {
 
                 // Ocultar botones de invitado
@@ -19,11 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 // Personalizar el texto del botón Cuenta dentro del dropdown
-                const botonCuenta = document.querySelector('.dropdown .MiCuenta');
+                const botonCuenta = document.querySelector('.usuario-registrado.dropdown');
 
                 if (botonCuenta) {
-                    botonCuenta.classList.remove('hidden');
-
                     const enlaceTexto = botonCuenta.querySelector('.MiCuenta');
 
                     if (enlaceTexto) {
